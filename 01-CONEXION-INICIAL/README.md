@@ -98,7 +98,7 @@ Este bloque configura cómo Terraform se conecta a AWS. Aquí se define:
 1. El perfil debe existir previamente en el equipo, concretamente deberá existir el archivo: `~/.aws/credentials``. Por ejemplo, en este caso sería:
 
 ````bash
-[awsacademy-proyectopruebas]
+[awsacademy-terraform]
 aws_access_key_id = ASIAVJ...
 aws_secret_access_key = 7i7U8...
 aws_session_token = IQoJb3JpZ2l...
@@ -106,7 +106,7 @@ aws_session_token = IQoJb3JpZ2l...
 
 2. Se recomienda crear **un perfil distinto por cada laboratorio** de AWS Academy para evitar conflictos entre proyectos. En este caso concreto, existe un perfil llamado "awsacademy-terraform" en el archivo anterior. Si no existiera deberá configurarse por alguno de los métodos conocidos, por ejemplo ejecutando el comando:
 ````bash
-aws configure -profile awsacademy-proyectopruebas
+aws configure -profile awsacademy-terraform
 ````
    
 
