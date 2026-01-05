@@ -20,13 +20,13 @@ Este ejemplo es ideal como **primer contacto con Terraform**.
 
 Antes de ejecutar este proyecto, es necesario tener:
 
-- Cuenta de **AWS Academy**
-- AWS CLI instalada y configurada
-- Un perfil de AWS CLI válido
+- Cuenta de **AWS Academy**.
+- AWS CLI instalada y configurada en el equipo en el que estés trabajando. 
+- Un perfil de AWS CLI válido. Esto lo tienes si estás inscrito en algún AWS Academy Learner Lab. 
 - Terraform instalado (versión recomendada ≥ 1.5)
 - Conocimientos básicos de:
-  - Infraestructura como código (IaC)
-  - Servicios básicos de AWS
+  - Infraestructura como código (IaC).
+  - Servicios básicos de AWS.
 
 ----
 ## Estructura del proyecto
@@ -89,24 +89,31 @@ provider "aws" {
 
 Este bloque configura cómo Terraform se conecta a AWS. Aquí se define:
 
-- El perfil de AWS CLI que se va a utilizar
+- El perfil de AWS CLI que se va a utilizar.
 
-- La región de AWS donde se trabajará
+- La región de AWS donde se trabajará.
 
 #### 📌 Aspectos importantes:
 
-1. El perfil debe existir previamente en el equipo:
+1. El perfil debe existir previamente en el equipo, concretamente deberá existir el archivo: `~/.aws/credentials``. Por ejemplo, en este caso sería:
 
-Archivo: `~/.aws/credentials`
+````bash
+[awsacademy-proyectopruebas]
+aws_access_key_id = ASIAVJ...
+aws_secret_access_key = 7i7U8...
+aws_session_token = IQoJb3JpZ2l...
+````
 
-2. Se recomienda crear **un perfil distinto por cada laboratorio**
-de AWS Academy para evitar conflictos entre proyectos.
+2. Se recomienda crear **un perfil distinto por cada laboratorio** de AWS Academy para evitar conflictos entre proyectos. En este caso concreto, existe un perfil llamado "awsacademy-terraform" en el archivo anterior. Si no existiera deberá configurarse por alguno de los métodos conocidos, por ejemplo ejecutando el comando:
+````bash
+aws configure -profile awsacademy-proyectopruebas
+````
+   
 
 3. La región utilizada en este ejemplo es: `us-east-1`.
 
 ---
-### Ejecución del proyecto
-
+### Cómo ejecutar este proyecto
 
 Aunque este proyecto **no crea recursos**, es útil para comprobar
 que Terraform está correctamente configurado.
@@ -120,8 +127,16 @@ terraform init
 ````bash
 terraform plan
 ````
+3. Aplica los cambios, es decir, despliega la infraestructura que acabas de describir:
+````bash
+terraform apply
+````
+4. Elimina los recursos que acabas de crear: 
+````bash
+terraform destroy
+````
 
-⚠️ No aparecerá ningún plan de creación de recursos, ya que el proyecto
+⚠️ En este ejemplo concreto no aparecerá ningún plan de creación de recursos, ya que el proyecto
 solo define el provider.
 
 ----
@@ -130,7 +145,7 @@ solo define el provider.
 
 Tras ejecutar `terraform init`:
 
-- Terraform descargará el proveedor AWS
+- Terraform descargará el proveedor AWS.
 
 - Se creará el directorio `.terraform`.
 - No se crearán recursos en AWS.
