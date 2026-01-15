@@ -1,14 +1,12 @@
 /* OBJETIVO: Crear una instancia EC2 en la VPC default con Ubuntu 24.04 LTS. 
 En este ejemplo observar que: 
-
   resource → crear EC2
- 
- data → consultar VPC, subnets, AMI
- 
- referencias → ami = data.aws_ami.ubuntu_2404.id, subnet_id = data.aws_subnet_ids.default.ids[0]
- 
-  tags → buenas prácticas
+  data → consultar VPC, subnets, AMI
+  referencias → ami = data.aws_ami.ubuntu_2404.id, subnet_id = data.aws_subnet_ids.default.ids[0]
+   tags → buenas prácticas
 */
+
+data "aws_vpcs" "all_vpcs" {}
 
 # Leer la VPC default existente
 data "aws_vpc" "default" {
