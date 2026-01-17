@@ -6,7 +6,8 @@ En este ejemplo observar que:
    tags → buenas prácticas
 */
 
-data "aws_vpcs" "all_vpcs" {}
+
+
 
 # Leer la VPC default existente
 data "aws_vpc" "default" {
