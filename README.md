@@ -7,8 +7,11 @@ Todos los ejemplos utilizan como provider AWS. Se explican los siguientes puntos
 - Providers.
 - Variables.
 - Outputs.
-- 
+  
+
 ## Tareas pendientes:
 - Incluir plantillas ejemplo del bloque data source.
 - Añadir README.md para la mayoría de las plantillas. 
+- Convertir a Markdown la presentación utilizada en clase junto con estos ejemplos. 
   
+  Quedaría pendiente para el próximo curso. 
