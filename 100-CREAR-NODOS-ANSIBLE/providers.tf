@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "aws" {
-  profile = "awsacademy-terraform"
+  profile = "awsacademy-151777"
   region  = "us-east-1"
 }

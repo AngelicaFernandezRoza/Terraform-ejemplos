@@ -9,7 +9,7 @@ terraform {
 }
 # Configure the AWS provider
 provider "aws" {
-  profile = "awsacademy-CN2526-1TRIM-2"
+  profile = "awsacademy-151777"
   region  = "us-east-1"
 }
 
